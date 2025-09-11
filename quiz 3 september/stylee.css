@@ -1,0 +1,88 @@
+.darkfeature-section {
+    background: #1a1c2a;
+    padding: 80px 40px;
+}
+
+.darkfeature-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.darkfeature-item {
+    text-align: left;
+}
+
+.darkfeature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dicon-modules {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.dicon-onboarding {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.dicon-possibilities {
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+}
+
+.darkfeature-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.darkfeature-description {
+    font-size: 26sspx;
+    color: #ffffff !important;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.fast-section {
+    background:#5966d2;
+    padding: 120px 40px;
+    text-align: center;
+}
+
+.fast-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fast-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.fast-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+

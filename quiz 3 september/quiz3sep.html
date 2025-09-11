@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emanate Landing Page</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet" href="stylee.css">
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    /* General Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 15px 32px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+
+    .navbar .nav-right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      gap: 30px;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar .logo img {
+      height: 28px;
+      margin-right: 10px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+      color: #555;
+    }
+
+    .navbar .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-login {
+      background: #f5f5f5;
+      color: #333;
+    }
+    .btn-login:hover {
+      background: #e0e0e0;
+    }
+
+    .btn-signup {
+      background: #5a67d8;
+      color: white;
+    }
+    .btn-signup:hover {
+      background: #434190;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("https://preview.uiuxassets.com/emanate/media/bg/image-01@2x.jpg")
+        no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #2d3748;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+    .btn-primary {
+      background: #5a67d8;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background: #434190;
+    }
+
+    /* Features Section */
+    .features {
+      max-width: 1100px;
+      margin: 60px auto 200px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.75rem;
+      font-weight: 300;
+      line-height: 2.5rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 40px 48px;
+      width: 100%;
+      max-width: 900px;
+      justify-items: center;
+      align-items: center;
+    }
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      margin: 0 auto;
+    }
+    .feature img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 10px;
+    }
+    .feature h6 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: #2d3748;
+      text-align: center;
+    }
+
+    /* Dark Feature Section */
+    .dark-section {
+      background: #23232b;
+      color: #f5f6fa;
+      min-height: 370px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 0 80px 0;
+      width: 100vw;
+    }
+    .dark-section .feature-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .dark-section .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      max-width: 340px;
+      min-width: 260px;
+    }
+    .dark-section .feature img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 18px;
+      border-radius: 16px;
+      background: #2d2d3a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .dark-section .feature h5 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      color: #fff;
+    }
+    .dark-section .feature p {
+      font-size: 1.18rem;
+      color: #c7c9d3;
+      margin: 0;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Blue Highlight Section */
+    .blue-section {
+      background: #636ddc;
+      color: #fff;
+      padding: 90px 0 80px 0;
+      text-align: center;
+      width: 100vw;
+    }
+    .blue-section .highlight {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .blue-section h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+    .blue-section p {
+      font-size: 1.5rem;
+      color: #e0e3fa;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background-color: #1A1C2A;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .pricing-section h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .pricing-section p {
+      font-size: 16px;
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+    .toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .toggle label {
+      margin-left: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    .plans {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .plan {
+      background-color: #24253A;
+      padding: 30px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .plan:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    }
+    .plan h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .plan .price {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .plan p {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+    .plan button {
+      background-color: #333a4d;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .plan button:hover {
+      background-color: #4a5168;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="Essential Icons and Background/iconlogo.jpg" alt="Logo">
+      EMANATE
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Style Guide</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+      <div class="buttons">
+        <a href="#" class="btn btn-login">Log In</a>
+        <a href="#" class="btn btn-signup">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Emanate HTML Template</h1>
+      <p>A minimal and responsive HTML5 landing page built on lightweight, clean and customizable code.</p>
+      <a href="#" class="btn-primary">Get started, it's free!</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-header">
+      <h3>Based On Modular Design</h3>
+      <p>Build awesome websites or landing pages with simple and independent parts.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature"><img src="Essential Icons and Background/minimal.png" alt=""><h6>Minimal Design</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/rocket.png" alt=""><h6>Rocket Fast</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/custom.png" alt=""><h6>Custom Framework</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/koran.png" alt=""><h6>Style Guide</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/css.png" alt=""><h6>CSS + SASS</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/settings.png" alt=""><h6>100% Customizable</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/kotak.png" alt=""><h6>Modular Design</h6></div>
+      <div class="feature"><img src="Essential Icons and Background/check.png" alt=""><h6>HTML5 Valid</h6></div>
+    </div>
+  </section>
+
+  <!-- Dark Feature Section -->
+  <section class="dark-section">
+    <div class="feature-row">
+      <div class="feature"><img src="Essential Icons and Background/dark.png" alt=""><h5>x2 Modules</h5><p>Each module can easily be turned into a dark version by adding .dark as class.</p></div>
+      <div class="feature"><img src="Essential Icons and Background/contact.png" alt=""><h5>Onboarding Screens</h5><p>Additional pages to log in, sign up as well as forgot password are included.</p></div>
+      <div class="feature"><img src="Essential Icons and Background/mixer.png" alt=""><h5>Unlimited Possibilities</h5><p>With a custom framework and global classes, build consistent pages with ease.</p></div>
+    </div>
+  </section>
+
+  <!-- Blue Highlight Section -->
+  <section class="blue-section">
+    <div class="highlight">
+      <h1>And... fast. Really fast.</h1>
+      <p>The main focus of this template is performance, no bloat.</p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section">
+    <h2>Or find the perfect paid plan for your business.</h2>
+    <p>Thousands of people rely on our service.</p>
+
+    <div class="toggle">
+      <input type="checkbox" id="yearly">
+      <label for="yearly">Pay yearly:</label>
+    </div>
+    
+    <div class="plans">
+      <div class="plan">
+        <h3>For Professionals</h3>
+        <div class="price">$10 <span style="font-size:14px;">/MO</span></div>
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+        <button>Purchase</button>
+      </div>
+      <div class="plan">
+        <h3>For Teams</h3>
+        <div class="price">$20 <span style="font-size:14px;">/MO</span></div>
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+        <button>Purchase</button>
+      </div>
+      <div class="plan">
+        <h3>For Enterprises</h3>
+        <div class="price">$50 <span style="font-size:14px;">/MO</span></div>
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+        <button>Purchase</button>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h5>Startup</h5>
+      <ul>
+        <li><a href="#">Getting Started</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Requirements</a></li>
+        <li><a href="#">License</a></li>
+        <li><a href="#">Updates</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Medium</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter">
+      <h5>Join The Newsletter</h5>
+      <p>Get the latest news and resources right into your inbox every monday.</p>
+      <form>
+        <input type="email" placeholder="Your email..." required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>HTML Template by UI/UX Assets - © 2018, all rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #f8f8fb;
+    padding: 50px 20px 20px;
+    font-family: system-ui, sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .footer-column h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1c1c28;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #636ddc;
+  }
+
+  /* Newsletter */
+  .newsletter p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .newsletter form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .newsletter input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  .newsletter button {
+    background: #636ddc;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+
+  .newsletter button:hover {
+    background: #4a52b2;
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+  }
+</style>
