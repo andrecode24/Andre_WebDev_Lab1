@@ -1,0 +1,151 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #ffffff;
+}
+
+.App-link {
+  color: #ffffff;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === FULL BLACK THEME === */
+
+/* Global dark pages */
+.page-dark,
+.page-dark-full {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Fill the viewport completely */
+.page-dark .vh-100,
+.page-dark-full .vh-100 {
+  min-height: 100vh;
+}
+
+/* Cards: pure black, white text */
+.page-dark .card,
+.page-dark-full .card {
+  background-color: #000000 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+}
+
+/* Text elements */
+.page-dark .form-label,
+.page-dark label,
+.page-dark p,
+.page-dark span,
+.page-dark-full .form-label,
+.page-dark-full label,
+.page-dark-full p,
+.page-dark-full span,
+.page-dark-full h1,
+.page-dark-full h2,
+.page-dark-full h3,
+.page-dark-full h4,
+.page-dark-full h5,
+.page-dark-full h6 {
+  color: #ffffff !important;
+}
+
+/* Form fields: black background + white border */
+.page-dark .form-control,
+.page-dark-full .form-control {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+.page-dark ::placeholder,
+.page-dark-full ::placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+/* Buttons: black background + white border + white text */
+.page-dark .btn,
+.page-dark-full .btn {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+}
+
+/* Hover: invert to white background + black text for clarity */
+.page-dark .btn:hover,
+.page-dark-full .btn:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Primary buttons same style for consistency */
+.page-dark .btn-primary,
+.page-dark-full .btn-primary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.25) !important;
+}
+
+/* Links: keep white */
+.page-dark a,
+.page-dark-full a {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+/* Remove light/other themes for simplicity */
+.page-light,
+.page-accent,
+.page-warning {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+.page-light .card,
+.page-accent .card,
+.page-warning .card {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+.page-light .btn-primary,
+.page-accent .btn-primary,
+.page-warning .btn-primary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+.page-light ::placeholder,
+.page-accent ::placeholder,
+.page-warning ::placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
